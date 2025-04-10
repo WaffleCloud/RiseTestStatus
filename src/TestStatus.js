@@ -24,7 +24,7 @@ function TestStatus({searchTerm, setSearchTerm, rows, setRows, result, setResult
     <div className="">
       <h2 className="">Testing Status</h2>
         <table className="">
-         <div className="result-box">{result}</div>
+         <div className="result-box">"{result}"</div>
         </table> 
     
     </div>
