@@ -14,8 +14,11 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [rows, setRows] = useState([])
   const [result, setResult] = useState([])
+  const [dailyMessage, setDailyMessage] = useState("Enter the student's code to view testing status")
 
     useEffect(() => {
+
+      //fetch spread sheet
       const fetchSheet = async () => {
         const res = await fetch(
           `https://sheets.googleapis.com/v4/spreadsheets/${WB_ID}/values/${RANGE}?key=${API_KEY}`
@@ -24,10 +27,23 @@ function App() {
         const values = data.values || []
         setRows(values)
         console.log("Fetched rows:", values);
-      }
+
+      // 💬 Pull daily message
+    if (values.length > 1) {
+      const headers = values[0];
+      const messageIndex = headers.indexOf("Daily Message"); // Change this to match your sheet
+
+      if (messageIndex !== -1) {
+        const firstDataRow = values[1]; // Adjust which row has the message
+        setDailyMessage(firstDataRow[messageIndex]);
   
-      fetchSheet()
-    }, [])
+      }
+    }
+  } 
+  fetchSheet()
+}, [])
+
+  
 
 
 
@@ -57,7 +73,7 @@ function App() {
       </header>
       <div className="box">
           <div className="search-contents">
-            Enter the student's code to view testing status
+            {dailyMessage}
             <br></br>
             <br></br>
             <input 
