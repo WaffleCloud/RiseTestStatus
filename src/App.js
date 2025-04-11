@@ -73,7 +73,7 @@ function App() {
       </header>
       <div className="box">
           <div className="search-contents">
-            {dailyMessage}
+            <div className="dailyMessage-box">{dailyMessage}</div>
             <br></br>
             <br></br>
             <input 
