@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 
 const WB_ID = "1D96ZHUqFqCg-6XcdNft-73J6cYxmQ262GNuVDKazJcU"
 const API_KEY = "AIzaSyByXNOJuXAtSVVL-23JsiCjwj7JOyWgEBI"
-const RANGE = "Today!A1:Z100" // Change as needed
+const RANGE = "Today!A1:Z1000" // Change as needed
 
 
 
