@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 
 
@@ -102,7 +103,7 @@ function App() {
             </div>
           </div>
       </div>
-      
+      <Analytics />``
     </div>
     
   );
